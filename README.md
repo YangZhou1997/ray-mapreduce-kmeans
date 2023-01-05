@@ -1,6 +1,16 @@
 # ray-mapreduce-kmeans
 ![ray-mapreduce](https://miro.medium.com/max/1400/1*2omU7XHeJUWgZ3kleRJ-OA.png)
 
+## Yang's notes:
+Make sure you are using python3.10 in a conda environment and have installed ray.
+
+```
+conda install pandas matplotlib numpy scipy scikit-learn joblib pyspark pytz
+cd utils && python setup.py build_ext --inplace && cd -
+cd data && wget https://snap.stanford.edu/data/loc-gowalla_totalCheckins.txt.gz && gzip -d loc-gowalla_totalCheckins.txt.gz && cd -
+python main.py -d /users/yangzhou/ray-mapreduce-kmeans/data -f loc-gowalla_totalCheckins.txt -s 50000 -k 20 -n 10 -m 5 -t 2
+```
+
 ## Full document
 > [Medium](https://medium.com/navepnow/ray-supported-high-performance-distributed-clustering-algorithm-46389d422802)
 
