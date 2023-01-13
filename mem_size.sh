@@ -1,0 +1,1 @@
+cat /proc/$1/smaps | grep -i pss |  awk '{Total+=$2} END {print Total/1024" MB"}'

@@ -134,7 +134,8 @@ def createNewCluster(reducers):
 
 
 
-@ray.remote(num_cpus=1)
+@ray.remote
+# @ray.remote(num_cpus=1)
 class KMeansMapper(object):
     centroids = 0
 
@@ -223,7 +224,8 @@ class KMeansMapper(object):
                 self._clusterAssment[i, :] = int(minIndex), minDist
 
 
-@ray.remote(num_cpus=0.5)
+@ray.remote
+# @ray.remote(num_cpus=1)
 class KMeansReducer(object):
     def __init__(self, value, *kmeansmappers):
         self._value = value

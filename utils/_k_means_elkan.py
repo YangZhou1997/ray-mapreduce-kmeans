@@ -55,6 +55,7 @@ def findClosest(k, centroids, item, i, distMatrix):
     
     return bestIndex, bestDistance
 
+# @ray.remote(num_cpus=1)
 @ray.remote
 def megaFindClosest(k, centroids, distMatrix, item):
     n = item.shape[0] # n samples after splilt
